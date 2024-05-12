@@ -3,7 +3,6 @@ import http from "node:http";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import cors from "cors";
 import path from "node:path";
-import { hostname } from "node:os";
 import chalk from "chalk";
 import { dynamicPath } from "@nebula-services/dynamic";
 
