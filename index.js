@@ -47,11 +47,3 @@ server.on("upgrade", (req, socket, head) => {
 });
 
 server.listen({ port: 3000 });
-process.on("SIGINT", shutdown);
-process.on("SIGTERM", shutdown);
-function shutdown() {
-  console.log("SIGTERM signal received: closing HTTP server");
-  server.close();
-  bareServer.close();
-  process.exit(0);
-}
