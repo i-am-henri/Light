@@ -28,13 +28,7 @@ app.get("/go", (req, res) => {
   res.sendFile(path.join(process.cwd(), "/public/go.html"));
 });
 
-app.get("/search=:query", async (req, res) => {
-  const { query } = req.params;
 
-  const reply = await fetch(`http://api.duckduckgo.com/ac?q=${query}&format=json`).then((resp) => resp.json());
-
-  res.send(reply);
-});
 
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
