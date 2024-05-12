@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Light" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="description" content="A fast, simple, and highly customizable proxy." />
     <meta name="google-adsense-account" content="ca-pub-2804638430420139">
     <title id="title"></title>
@@ -23,91 +24,53 @@
         z-index: -1;
       }
     </style>
-    <script src="/assets/js/eruda/eruda.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-benchmark.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-code.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-features.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-monitor.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-orientation.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-timing.js"></script>
-    <script src="/assets/js/eruda/plugins/eruda-touches.js"></script>
+    <script src="./assets/js/eruda/eruda.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-benchmark.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-code.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-features.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-monitor.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-orientation.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-timing.js"></script>
+    <script src="./assets/js/eruda/plugins/eruda-touches.js"></script>
     <!--UV-->
-    <script src="/@/bundle.js"></script>
-    <script src="/@/config.js"></script>
+    <script src="./@/bundle.js"></script>
+    <script src="./@/config.js"></script>
     <!--Dynamic-->
-    <script src="/dynamic/dynamic.worker.js"></script>
-    <script src="/dynamic/dynamic.config.js"></script>
+    <script src="./dynamic/dynamic.worker.js"></script>
+    <script src="./dynamic/dynamic.config.js"></script>
     <!--Preload-->
-    <script src="/assets/js/preload.js"></script>
+    <script src="./assets/js/preload.js"></script>
     <script>
       registerSW();
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-180MJ5GDVH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-180MJ5GDVH");
-    </script>
   </head>
   <body>
-    <div style="background-color: var(--base-color);" class="gonav">
-      <div class="gonavAlign">
-        <a href="/">
-          <div class="gonavLink">
-            <img style="margin-top: 5px; animation: none;" src="assets/imgs/goicons/home.png" />
-          </div>
-        </a>
-
-        <a onclick="back()">
-          <div class="gonavLink">
-            <img style="margin-top: 5px; animation: none; margin-right: -10px;" src="assets/imgs/goicons/backward.png" />
-          </div>
-        </a>
-
-        <a onclick="reload()">
-          <div class="gonavLink">
-            <img style="margin-top: 5px;" class="settingnav" src="assets/imgs/goicons/reload.png" />
-          </div>
-        </a>
-
-        <a onclick="forward()">
-          <div class="gonavLink">
-            <img style="margin-top: 5px; animation: none; margin-left: -10px;" src="assets/imgs/goicons/forward.png" />
-          </div>
-        </a>
-
-        <div class="setting-input" style="width: 185px; position: relative; margin-right: 10px; margin-top: 1.5vh;">
-          <form id="uv-form">
-            <input placeholder="Search or type a URL" id="uv-address" style="max-height: 10px; padding: 10px;" class="setting-input__input" type="text" />
-          </form>
-        </div>
-
-        <a onclick="inspectelement()">
-          <div class="gonavLink">
-            <img style="margin-top: 5px; animation: none;" src="assets/imgs/goicons/inspect.png" />
-          </div>
-        </a>
-
-        <a onclick="newTab()">
-          <div style="min-width: 20px; max-width: 20px;" class="gonavLink">
-            <img style="margin-top: 5px; animation: none;" src="assets/imgs/goicons/new-tab.png" />
-          </div>
-        </a>
-
-        <a onclick="toggleFullScreen()">
-          <div class="gonavLink">
-            <img style="margin-top: 5px; animation: none;" src="assets/imgs/goicons/fullscreen.png" />
-          </div>
-        </a>
-      </div>
+    <div class="w-full h-12 flex *:text-white *:mx-2 bg-[#131313] border border-[#AAAAAA]">
+      <a onclick="back()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-chevron-left"><circle cx="12" cy="12" r="10"/><path d="m14 16-4-4 4-4"/></svg>
+      </a>
+      <a onclick="forward()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-chevron-right"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+      </a>
+      <a onclick="toggleFullScreen()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+      </a>
+      <a onclick="newTab()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </a>
+      <a onclick="inspectelement()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-braces"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+      </a>
+      <a onclick="reload()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-restart"><path d="M21 6H3"/><path d="M7 12H3"/><path d="M7 18H3"/><path d="M12 18a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L11 14"/><path d="M11 10v4h4"/></svg>
+      </a>
+      <!-- search input -->
+      <form id="uv-form">
+        <input placeholder="Search or type a URL" id="uv-address"  class="px-2 text-black py-1 border-none outline-none rounded-md" type="text" />
+      </form>
     </div>
 
-    <iframe src="" id="iframeId" style="bottom: 0;" style="border: 0px none;" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
+    <iframe src="" id="iframeId" class="border-none" name="Iframe" scrolling="yes" frameborder="0"  marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
     <script>
       function loadIframe(url) {
         const iframe = document.getElementById("iframeId");
@@ -140,6 +103,6 @@
     </div>
   </body>
   <!--Main Scripts-->
-  <script src="/assets/js/go.js"></script>
+  <script src="./assets/js/go.js"></script>
   <script async src="https://arc.io/widget.min.js#zQjQEQcr"></script>
 </html>
