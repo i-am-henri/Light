@@ -34,11 +34,11 @@
   </script>
 </head>
 
-<body class="min-h-screen">
-  <form id="uv-form" class="searchbar-center">
-    <div class="searchbar-input-spacer"></div>
-    <input id="uv-address" type="text" class="searchbar-input" maxlength="2048" autocapitalize="off" autocomplete="off"
+<body class="min-h-screen flex items-center justify-center">
+  <form id="uv-form" class="flex flex-col justify-start items-start">
+    <input id="uv-address" type="text" class="px-2 py-1 border-none outline-none rounded-md" maxlength="2048" autocapitalize="off" autocomplete="off"
       title="Search" role="combobox" placeholder="Search Anything" />
+      <button class="bg-white w-full py-1 mt-2 rounded-md" type="submit">go</button>
   </form>
 
 </body>
@@ -61,7 +61,5 @@
     }
   };
 </script>
-<script async src="https://widget.changelogfy.com/index.js"></script>
-<script async src="https://arc.io/widget.min.js#zQjQEQcr"></script>
 
 </html>
