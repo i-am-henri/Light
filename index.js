@@ -28,8 +28,6 @@ app.get("/go", (req, res) => {
   res.sendFile(path.join(process.cwd(), "/public/go.html"));
 });
 
-
-
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res);
